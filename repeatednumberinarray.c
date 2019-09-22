@@ -1,33 +1,25 @@
 #include <stdio.h>
-
-int main()
+void main()
 {
-	int a[5];
-	int i,j,n=5;
-	int id=-1,e;
-	for(i=0; i<n; i++)
-	{
-		printf("Enter element %d: ",i+1);
-		scanf("%d",&a[i]);
-	}
-	for(i=0; i<n; i++)
-	{
-		for(j=i+1; j<n; j++)
-		{
-			if(a[i]==a[j])
-			{
-				e=a[j];
-				id=j;
-				break;
-			}				
-		}
-		
-		if(id!= -1)
-			break;
-	}
-	if(id!=-1)
-		printf("%d repeated at %d index\n",ele,ind);
-	else
-		printf("There is no repeated element\n");
-	return 0;
+  int n,i,j,a[20],temp;
+  printf("Enter no of elements to enter:");
+  scanf("%d",&n);
+  printf("Enter numbers:");
+  for(i=0;i<n;i++)
+  scanf("%d",&a[i]);
+  a[i]='\0';
+ for(i=1,j=0;a[j]!='\0';j++)
+           {
+               if(a[j]==i)
+               {
+                   i++;
+                   j=-1;
+               }
+           }
+                if(a[j]=='\0')
+               {
+                   printf("\nmissing:%d",i);
+                   
+               }
+
 }
